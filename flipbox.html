@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipbox</title>
+    <!-- <link rel="stylesheet" href="/CSS/Flipbox.css"> -->
+    <Style>
+        .container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: translateZ(-200px) rotateZ(180deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+        }
+
+        .cube .surface {
+            width: 100%;
+            height: 100%;
+            font-size: 130px;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            position: absolute;
+            line-height: 300px;
+            background: #004080;
+            text-align: center;
+            backface-visibility: hidden;
+        }
+
+        .cube .one {
+            transform: rotateY(0deg) translateZ(150px);
+        }
+
+        .cube .two {
+            transform: rotateX(180deg) translateZ(150px);
+        }
+
+        .cube .three {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .cube .four {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        .cube .five {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .cube .six {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translateZ (-100px) rotateY (360deg) rotateZ (0deg) rotateX(45deg)
+            }
+
+            50% {
+                transform: translateZ (-100px) rotateY (100deg) rotateZ (100deg) rotateX(45deg)
+            }
+
+            100% {
+                transform: translateZ (-100px) rotateY (0deg) rotateZ (360deg) rotateX(45deg)
+            }
+        }
+    </Style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cubic">
+            <div class="surface one">1</div>
+            <div class="surface two">2</div>
+            <div class="surface three">3</div>
+            <div class="surface four">4</div>
+            <div class="surface five">5</div>
+            <div class="surface six">6</div>
+        </div>
+    </div>
+</body>
+
+</html>
